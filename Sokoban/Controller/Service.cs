@@ -21,7 +21,7 @@ namespace Sokoban.Controller
             obsticales = new Obsticales(new List<string>(){"0 3", "1 3","2 3", "2 2"});
             boxes = new Boxes
                 (
-                new List<string>(){"3 0","4 0"}, 
+                new List<string>(){"2 0","2 1"}, 
                 new List<string>(){"4 4","4 3"}
                 );
             _display = new Display();
@@ -69,11 +69,37 @@ namespace Sokoban.Controller
                     playerRow = playerOldRow;
                     playerCol = playerOldCol;
                 }
+
+                if (boxes.BoxCoordinates.Contains(newCoordinate))
+                {
+                    int index = boxes.BoxCoordinates.IndexOf(newCoordinate);
+                    
+                    int boxRow = boxes.BoxCoordinates[index].Split().Select(int.Parse).ToList()[0];
+                    int boxCol = boxes.BoxCoordinates[index].Split().Select(int.Parse).ToList()[1];
+                    
+                    switch (input)
+                    {
+                        case 'w':
+                            boxRow--;
+                            break;
+                        case 'a':
+                            boxCol--;
+                            break;
+                        case 's':
+                            boxRow++;
+                            break;
+                        case 'd':
+                            boxCol++;
+                            break;
+                    }
+
+                    boxes.BoxCoordinates[index] = boxRow + " " + boxCol;
+                }
                 
 
                 player.Coordinates = playerRow + " " + playerCol;
                 
-                
+                Console.Clear();
                 _display.DisplayField(field,player,obsticales,boxes);
             }
         }
