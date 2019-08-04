@@ -13,7 +13,8 @@ namespace Sokoban.Controller
         private Obsticales obsticales;
         private Boxes boxes;
         private Display _display;
-        
+
+        private bool flag = true;
         public void StartUp()
         {
             player = new Player("0 0");
@@ -22,7 +23,7 @@ namespace Sokoban.Controller
             boxes = new Boxes
                 (
                 new List<string>(){"2 0","2 1"}, 
-                new List<string>(){"4 4","4 3"}
+                new List<string>(){"4 0","3 3"}
                 );
             _display = new Display();
             _display.DisplayField(field,player,obsticales,boxes);
@@ -31,7 +32,7 @@ namespace Sokoban.Controller
 
         public void Play()
         {
-            while (true)
+            while (flag)
             {
                 Console.WriteLine();
                 char input = Console.ReadKey().KeyChar;
@@ -119,6 +120,13 @@ namespace Sokoban.Controller
                 
                 Console.Clear();
                 _display.DisplayField(field,player,obsticales,boxes);
+
+                if (boxes.BoxCoordinates.OrderBy(x => x).SequenceEqual(boxes.GoalCoordinates.OrderBy(x => x)))
+                {
+                    Console.Clear();
+                    _display.Congrats();
+                    Environment.Exit(0);                         
+                }
             }
         }
     }
