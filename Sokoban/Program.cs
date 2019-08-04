@@ -1,4 +1,5 @@
 ﻿using System;
+using Sokoban.Controller;
 
 namespace Sokoban
 {
@@ -6,7 +7,8 @@ namespace Sokoban
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Service s = new Service();
+            s.StartUp();
         }
     }
 }

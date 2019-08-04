@@ -5,7 +5,7 @@ namespace Sokoban.View
 {
     public class Display
     {
-        void DisplayField(Field field,Player player,Obsticales obsticales, Boxes boxes)
+        public void DisplayField(Field field,Player player,Obsticales obsticales, Boxes boxes)
         {
             string currCoordinate = "";
             
