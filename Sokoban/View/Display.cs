@@ -17,25 +17,27 @@ namespace Sokoban.View
                     
                     if (currCoordinate == player.Coordinates)
                     {
-                        Console.WriteLine("& ");
+                        Console.Write("& ");
                     }
                     else if (boxes.BoxCoordinates.Contains(currCoordinate))
                     {
-                        Console.WriteLine("# ");
+                        Console.Write("# ");
                     }
                     else if (boxes.GoalCoordinates.Contains(currCoordinate))
                     {
-                        Console.WriteLine("X ");
+                        Console.Write("X ");
                     }
                     else if (obsticales.Coordinates.Contains(currCoordinate))
                     {
-                        Console.WriteLine("  ");
+                        Console.Write("  ");
                     }
                     else
                     {
-                        Console.WriteLine("▒ ");
+                        Console.Write("▒ ");
                     } 
                 }
+
+                Console.WriteLine();
             }
         }
     }
