@@ -51,5 +51,10 @@ namespace Sokoban.View
                 Console.Write("▒ ");
             }
         }
+
+        public void Congrats()
+        {
+            Console.WriteLine("Congrats");
+        }
     }
 }

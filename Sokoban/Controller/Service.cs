@@ -74,8 +74,11 @@ namespace Sokoban.Controller
                 {
                     int index = boxes.BoxCoordinates.IndexOf(newCoordinate);
                     
-                    int boxRow = boxes.BoxCoordinates[index].Split().Select(int.Parse).ToList()[0];
-                    int boxCol = boxes.BoxCoordinates[index].Split().Select(int.Parse).ToList()[1];
+                    int boxOldRow = boxes.BoxCoordinates[index].Split().Select(int.Parse).ToList()[0];
+                    int boxOldCol = boxes.BoxCoordinates[index].Split().Select(int.Parse).ToList()[1];
+                    
+                    int boxRow = boxOldRow;
+                    int boxCol = boxOldCol;
                     
                     switch (input)
                     {
@@ -93,7 +96,22 @@ namespace Sokoban.Controller
                             break;
                     }
 
-                    boxes.BoxCoordinates[index] = boxRow + " " + boxCol;
+                    string newBoxCoordinate = boxRow + " " + boxCol;
+                    
+                    if (boxRow >= field.Rows || 
+                        boxRow < 0 || 
+                        boxCol >= field.Cols || 
+                        boxCol < 0 ||
+                        obsticales.Coordinates.Contains(newBoxCoordinate) || 
+                        boxes.BoxCoordinates.Contains(newBoxCoordinate))
+                    {
+                        playerRow = playerOldRow;
+                        playerCol = playerOldCol;
+                        boxRow = boxOldRow;
+                        boxCol = boxOldCol;
+                    }
+                    
+                    boxes.BoxCoordinates[index] = boxRow + " " + boxCol; 
                 }
                 
 
