@@ -54,6 +54,7 @@ namespace Sokoban.View
 
         public void Congrats()
         {
+            Console.Clear();
             Console.WriteLine("Congrats");
         }
     }
