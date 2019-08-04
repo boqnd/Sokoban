@@ -1,0 +1,11 @@
+/Users/boyandonchev/Documents/Programming/C#/Sokoban/Sokoban/bin/Debug/netcoreapp2.2/Sokoban.deps.json
+/Users/boyandonchev/Documents/Programming/C#/Sokoban/Sokoban/bin/Debug/netcoreapp2.2/Sokoban.runtimeconfig.json
+/Users/boyandonchev/Documents/Programming/C#/Sokoban/Sokoban/bin/Debug/netcoreapp2.2/Sokoban.runtimeconfig.dev.json
+/Users/boyandonchev/Documents/Programming/C#/Sokoban/Sokoban/bin/Debug/netcoreapp2.2/Sokoban.dll
+/Users/boyandonchev/Documents/Programming/C#/Sokoban/Sokoban/bin/Debug/netcoreapp2.2/Sokoban.pdb
+/Users/boyandonchev/Documents/Programming/C#/Sokoban/Sokoban/obj/Debug/netcoreapp2.2/Sokoban.csprojAssemblyReference.cache
+/Users/boyandonchev/Documents/Programming/C#/Sokoban/Sokoban/obj/Debug/netcoreapp2.2/Sokoban.csproj.CoreCompileInputs.cache
+/Users/boyandonchev/Documents/Programming/C#/Sokoban/Sokoban/obj/Debug/netcoreapp2.2/Sokoban.AssemblyInfoInputs.cache
+/Users/boyandonchev/Documents/Programming/C#/Sokoban/Sokoban/obj/Debug/netcoreapp2.2/Sokoban.AssemblyInfo.cs
+/Users/boyandonchev/Documents/Programming/C#/Sokoban/Sokoban/obj/Debug/netcoreapp2.2/Sokoban.dll
+/Users/boyandonchev/Documents/Programming/C#/Sokoban/Sokoban/obj/Debug/netcoreapp2.2/Sokoban.pdb
