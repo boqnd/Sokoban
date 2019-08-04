@@ -36,8 +36,11 @@ namespace Sokoban.Controller
                 Console.WriteLine();
                 char input = Console.ReadKey().KeyChar;
 
-                int playerRow = player.Coordinates.Split().Select(int.Parse).ToList()[0];
-                int playerCol = player.Coordinates.Split().Select(int.Parse).ToList()[1];
+                int playerOldRow = player.Coordinates.Split().Select(int.Parse).ToList()[0];
+                int playerOldCol = player.Coordinates.Split().Select(int.Parse).ToList()[1];
+
+                int playerRow = playerOldRow;
+                int playerCol = playerOldCol;
                 
                 switch (input)
                 {
@@ -54,10 +57,22 @@ namespace Sokoban.Controller
                         playerCol++;
                         break;
                 }
+
+                string newCoordinate = playerRow + " " + playerCol;
                 
+                if (playerRow >= field.Rows || 
+                    playerRow < 0 || 
+                    playerCol >= field.Cols || 
+                    playerCol < 0 ||
+                    obsticales.Coordinates.Contains(newCoordinate))
+                {
+                    playerRow = playerOldRow;
+                    playerCol = playerOldCol;
+                }
                 
 
                 player.Coordinates = playerRow + " " + playerCol;
+                
                 
                 _display.DisplayField(field,player,obsticales,boxes);
             }
