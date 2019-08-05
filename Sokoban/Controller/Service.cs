@@ -15,6 +15,8 @@ namespace Sokoban.Controller
         private Display _display;
 
         private bool flag = true;
+        private bool resetFlag = false;
+        private int currLevel = 0;
         public void StartUp()
         {
             player = new Player("0 0");
@@ -89,6 +91,7 @@ namespace Sokoban.Controller
         public void Play()
         {
             flag = true;
+            resetFlag = false;
             while (flag)
             {
                 Console.WriteLine();
@@ -113,6 +116,10 @@ namespace Sokoban.Controller
                         break;
                     case 'd':
                         playerCol++;
+                        break;
+                    case 'r':
+                        resetFlag = true;
+                        flag = false;
                         break;
                 }
 
@@ -182,6 +189,27 @@ namespace Sokoban.Controller
                 {
                     Console.Clear();
                     flag = false;
+                    currLevel++;
+                }
+            }
+
+            if (resetFlag)
+            {
+                Console.Clear();
+                switch (currLevel)
+                {
+                    case 0:
+                        StartUp();
+                        break;
+                    case 1:
+                        SetLevel1();
+                        break;
+                    case 2:
+                        SetLevel2();
+                        break;
+                    case 3:
+                        SetLevel3();
+                        break;
                 }
             }
         }
