@@ -30,13 +30,10 @@ namespace Sokoban.Controller
             _display = new Display();
             _display.DisplayLevel(currLevel);
             _display.DisplayField(field,player,obsticales,boxes);
+
             Play();
             SetLevel1();
-            SetLevel2();
-            SetLevel3();
 
-            
-            _display.Congrats();
         }
 
         public void SetLevel1()
@@ -54,6 +51,7 @@ namespace Sokoban.Controller
             _display.DisplayLevel(currLevel);
             _display.DisplayField(field,player,obsticales,boxes);
             Play();
+            SetLevel2();
         }
         
         public void SetLevel2()
@@ -71,6 +69,7 @@ namespace Sokoban.Controller
             _display.DisplayLevel(currLevel);
             _display.DisplayField(field,player,obsticales,boxes);
             Play();
+            SetLevel3();
         }
         
         public void SetLevel3()
@@ -91,17 +90,20 @@ namespace Sokoban.Controller
             _display.DisplayLevel(currLevel);
             _display.DisplayField(field,player,obsticales,boxes);
             Play();
+            _display.Congrats();
+
         }
 
         public void LevelPick()
         {
+            bool levelPickFlag = true;
             int selectedLevel = 0;
             Console.Clear();
             Console.WriteLine("Use W/S to navigate and P to play the selected level.");
             Console.Write("Select level -> ");
             Console.WriteLine(selectedLevel);
             
-            while (true)
+            while (levelPickFlag)
             {
                 char input = Console.ReadKey().KeyChar;
 
@@ -113,9 +115,6 @@ namespace Sokoban.Controller
                     case 's':
                         selectedLevel--;
                         break;  
-                    case 'p':
-                        PlayLevel();
-                        break;
                 }
 
                 void PlayLevel()
@@ -137,6 +136,8 @@ namespace Sokoban.Controller
                             SetLevel3();
                             break;
                     }
+
+                    levelPickFlag = false;
                 }
                 
                 if (selectedLevel<0)
@@ -153,6 +154,11 @@ namespace Sokoban.Controller
                 Console.WriteLine("Use W/S to navigate");
                 Console.Write("Choose level -> ");
                 Console.WriteLine(selectedLevel);
+
+                if (input == 'p')
+                {
+                    PlayLevel();
+                }
                 
             }
         }
