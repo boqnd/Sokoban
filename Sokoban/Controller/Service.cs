@@ -151,7 +151,7 @@ namespace Sokoban.Controller
                 }
                 
                 Console.Clear();
-                Console.WriteLine("Use W/S to navigate");
+                Console.WriteLine("Use W/S to navigate and P to play the selected level.");
                 Console.Write("Choose level -> ");
                 Console.WriteLine(selectedLevel);
 
