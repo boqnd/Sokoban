@@ -92,7 +92,70 @@ namespace Sokoban.Controller
             _display.DisplayField(field,player,obsticales,boxes);
             Play();
         }
-        
+
+        public void LevelPick()
+        {
+            int selectedLevel = 0;
+            Console.Clear();
+            Console.WriteLine("Use W/S to navigate and P to play the selected level.");
+            Console.Write("Select level -> ");
+            Console.WriteLine(selectedLevel);
+            
+            while (true)
+            {
+                char input = Console.ReadKey().KeyChar;
+
+                switch (input)
+                {
+                    case 'w':
+                        selectedLevel++;
+                        break;
+                    case 's':
+                        selectedLevel--;
+                        break;  
+                    case 'p':
+                        PlayLevel();
+                        break;
+                }
+
+                void PlayLevel()
+                {
+                    Console.Clear();
+                    currLevel = selectedLevel;
+                    switch (currLevel)
+                    {
+                        case 0:
+                            StartUp();
+                            break;
+                        case 1:
+                            SetLevel1();
+                            break;
+                        case 2:
+                            SetLevel2();
+                            break;
+                        case 3:
+                            SetLevel3();
+                            break;
+                    }
+                }
+                
+                if (selectedLevel<0)
+                {
+                    selectedLevel = 0;
+                }
+
+                if (selectedLevel>3)
+                {
+                    selectedLevel = 3;
+                }
+                
+                Console.Clear();
+                Console.WriteLine("Use W/S to navigate");
+                Console.Write("Choose level -> ");
+                Console.WriteLine(selectedLevel);
+                
+            }
+        }
         public void Play()
         {
             flag = true;
@@ -125,6 +188,9 @@ namespace Sokoban.Controller
                     case 'r':
                         resetFlag = true;
                         flag = false;
+                        break;
+                    case 'l':
+                        LevelPick();
                         break;
                 }
 
