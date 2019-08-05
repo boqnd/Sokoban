@@ -52,6 +52,52 @@ namespace Sokoban.View
             }
         }
 
+        public void DisplayLevel(int level)
+        {
+            Console.WriteLine(" _____  _____ _   _____________  ___   _   _ ");
+            Console.WriteLine("/  ___||  _  | | / /  _  | ___ \\/ _ \\ | \\ | |");
+            Console.WriteLine("\\ `--. | | | | |/ /| | | | |_/ / /_\\ \\|  \\| |");
+            Console.WriteLine(" `--. \\| | | |    \\| | | | ___ \\  _  || . ` |");
+            Console.WriteLine("/\\__/ /\\ \\_/ / |\\  \\ \\_/ / |_/ / | | || |\\  |");
+            Console.WriteLine("\\____/  \\___/\\_| \\_/\\___/\\____/\\_| |_/\\_| \\_/");
+
+            switch (level)
+            {
+                case 0:
+                    Console.WriteLine("     _                        _                _  ");
+                    Console.WriteLine("    | |                      | |              | | ");
+                    Console.WriteLine("  __| | ___ _ __ ___   ___   | | _____   _____| | ");
+                    Console.WriteLine(" / _` |/ _ \\ '_ ` _ \\ / _ \\  | |/ _ \\ \\ / / _ \\ | ");
+                    Console.WriteLine("| (_| |  __/ | | | | | (_) | | |  __/\\ V /  __/ | ");
+                    Console.WriteLine(" \\__,_|\\___|_| |_| |_|\\___/  |_|\\___| \\_/ \\___|_| ");
+                    break;
+                case 1:
+                    Console.WriteLine(" _                _   __ ");
+                    Console.WriteLine("| |              | | /  |");
+                    Console.WriteLine("| | _____   _____| | `| |");
+                    Console.WriteLine("| |/ _ \\ \\ / / _ \\ |  | |");
+                    Console.WriteLine("| |  __/\\ V /  __/ | _| |_");
+                    Console.WriteLine("|_|\\___| \\_/ \\___|_| \\___/");
+                    break;
+                case 2:
+                    Console.WriteLine(" _                _   _____ ");
+                    Console.WriteLine("| |              | | / __  \\");
+                    Console.WriteLine("| | _____   _____| | `' / /'");
+                    Console.WriteLine("| |/ _ \\ \\ / / _ \\ |   / /  ");
+                    Console.WriteLine("| |  __/\\ V /  __/ | ./ /___");
+                    Console.WriteLine("|_|\\___| \\_/ \\___|_| \\_____/");
+                    break;
+                case 3:
+                    Console.WriteLine(" _                _   _____ ");
+                    Console.WriteLine("| |              | | |____ |");
+                    Console.WriteLine("| | _____   _____| |     / /");
+                    Console.WriteLine("| |/ _ \\ \\ / / _ \\ |     \\ \\");
+                    Console.WriteLine("| |  __/\\ V /  __/ | .___/ /");
+                    Console.WriteLine("|_|\\___| \\_/ \\___|_| \\____/");
+                    break;
+            }
+        }
+
         public void Congrats()
         {
             Console.Clear();

@@ -28,6 +28,7 @@ namespace Sokoban.Controller
                 new List<string>(){"4 0","3 3"}
                 );
             _display = new Display();
+            _display.DisplayLevel(currLevel);
             _display.DisplayField(field,player,obsticales,boxes);
             Play();
             SetLevel1();
@@ -50,6 +51,7 @@ namespace Sokoban.Controller
                 new List<string>(){"0 3","2 1"}
             );
             _display = new Display();
+            _display.DisplayLevel(currLevel);
             _display.DisplayField(field,player,obsticales,boxes);
             Play();
         }
@@ -66,6 +68,7 @@ namespace Sokoban.Controller
                 new List<string>(){"2 2","2 3"}
             );
             _display = new Display();
+            _display.DisplayLevel(currLevel);
             _display.DisplayField(field,player,obsticales,boxes);
             Play();
         }
@@ -85,9 +88,11 @@ namespace Sokoban.Controller
                 new List<string>(){"4 1","4 3","4 5"}
             );
             _display = new Display();
+            _display.DisplayLevel(currLevel);
             _display.DisplayField(field,player,obsticales,boxes);
             Play();
         }
+        
         public void Play()
         {
             flag = true;
@@ -183,6 +188,7 @@ namespace Sokoban.Controller
                 player.Coordinates = playerRow + " " + playerCol;
                 
                 Console.Clear();
+                _display.DisplayLevel(currLevel);
                 _display.DisplayField(field,player,obsticales,boxes);
 
                 if (boxes.BoxCoordinates.OrderBy(x => x).SequenceEqual(boxes.GoalCoordinates.OrderBy(x => x)))
